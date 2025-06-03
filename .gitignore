@@ -1,0 +1,22 @@
+# Ignorar node_modules en cualquier subcarpeta
+node_modules/
+
+# Ignorar archivos de entorno en cualquier subcarpeta
+*.env
+*.env.local
+*.env.*.local
+
+# Ignorar carpetas de build de frontend y backend
+ce-english/dist/
+ce-english/build/
+server/dist/
+server/build/
+
+# Ignorar logs y caches
+*.log
+.cache/
+
+# Ignorar archivos/ajustes de IDE y sistema
+.DS_Store
+Thumbs.db
+.vscode/

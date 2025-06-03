@@ -1,0 +1,33 @@
+.root {
+    display: flex;
+    flex-direction: column;
+    gap: 0.25rem;
+    margin-bottom: 1rem;
+    max-width: 320px;
+  }
+  
+  label {
+    font-weight: 500;
+    color: var(--gray-700);
+    font-size: 0.9rem;
+  }
+  
+  .select {
+    padding: 0.5rem 0.75rem;
+    font-size: 0.95rem;
+    border: 1px solid var(--gray-300);
+    border-radius: 6px;
+    background: #fff;
+    transition: border-color 0.2s;
+  }
+  
+  .select:focus {
+    outline: none;
+    border-color: var(--primary-500);
+    box-shadow: 0 0 0 2px rgba(59, 130, 246, 0.2);
+  }
+  
+  .error {
+    color: var(--danger-500);
+  }
+  
