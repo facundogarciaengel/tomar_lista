@@ -27,7 +27,7 @@ export default function Navbar() {
     <header className={styles.root}>
       <div className={styles.container}>
         <Link to={isLogin ? '/' : '/dashboard'} className={styles.logo}>
-          C&E English
+          C&E English
         </Link>
 
         {/* Muestra el resto solo si no es la página de login */}
@@ -47,6 +47,7 @@ export default function Navbar() {
               <NavLink to="/dashboard"  onClick={() => setOpen(false)}>Dashboard</NavLink>
               <NavLink to="/clases"     onClick={() => setOpen(false)}>Clases</NavLink>
               <NavLink to="/asistencia" onClick={() => setOpen(false)}>Asistencia</NavLink>
+              <NavLink to="/reportes"  onClick={() => setOpen(false)}>Reportes</NavLink>
               <NavLink to="/perfil"     onClick={() => setOpen(false)}>Perfil</NavLink>
               <button className={styles.logout} onClick={logout}>Salir</button>
             </nav>

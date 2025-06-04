@@ -19,7 +19,8 @@ export default function Login() {
       const data = await loginRequest(credentials); // { token, user }
       login(data);                                  // guarda token + user
       navigate('/dashboard');
-    } catch (err) {
+    } catch (e) {
+      console.error(e);
       setError('Credenciales inválidas');
     } finally {
       setLoading(false);

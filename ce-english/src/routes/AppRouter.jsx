@@ -4,6 +4,7 @@ import Dashboard from '../pages/Dashboard.jsx';
 import Clases from '../pages/Clases.jsx';
 import Asistencia from '../pages/Asistencia.jsx';
 import Perfil from '../pages/Perfil.jsx';
+import Reportes from '../pages/Reportes.jsx';
 import ProtectedRoute from './ProtectedRoute.jsx';
 
 export default function AppRouter() {
@@ -31,6 +32,14 @@ export default function AppRouter() {
         element={
           <ProtectedRoute>
             <Asistencia />
+          </ProtectedRoute>
+        }
+      />
+      <Route
+        path="/reportes"
+        element={
+          <ProtectedRoute>
+            <Reportes />
           </ProtectedRoute>
         }
       />

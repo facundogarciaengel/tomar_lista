@@ -64,5 +64,18 @@ export const fetchUsuario = async (id, token) => {
   return data;  // { id, nombre, email, rol, ... }
 };
 
+// ─── Reportes ───────────────────────────────────
+/**
+ * Resumen de asistencia por clase
+ * GET /api/reportes/asistencia/clase/:claseId
+ */
+export const fetchReporteClase = async (claseId, token, params = {}) => {
+  const { data } = await api.get(`/reportes/asistencia/clase/${claseId}`, {
+    headers: { Authorization: `Bearer ${token}` },
+    params,
+  });
+  return data;
+};
+
 
 export default api;
