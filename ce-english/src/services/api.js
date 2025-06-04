@@ -77,5 +77,57 @@ export const fetchReporteClase = async (claseId, token, params = {}) => {
   return data;
 };
 
+// ─── Usuarios ───────────────────────────────────
+/**
+ * Registrar usuario (admin o docente)
+ * POST /api/auth/register
+ */
+export const registerUser = async (payload, token) => {
+  const { data } = await api.post('/auth/register', payload, {
+    headers: token ? { Authorization: `Bearer ${token}` } : {},
+  });
+  return data;
+};
+
+/** Obtener lista de usuarios */
+export const fetchUsuarios = async (token) => {
+  const { data } = await api.get('/usuarios', {
+    headers: { Authorization: `Bearer ${token}` },
+  });
+  return data;
+};
+
+// ─── Alumnos ────────────────────────────────────
+export const createAlumno = async (payload, token) => {
+  const { data } = await api.post('/alumnos', payload, {
+    headers: { Authorization: `Bearer ${token}` },
+  });
+  return data;
+};
+
+export const fetchAlumnos = async (token) => {
+  const { data } = await api.get('/alumnos', {
+    headers: { Authorization: `Bearer ${token}` },
+  });
+  return data;
+};
+
+// ─── Clases ─────────────────────────────────────
+export const createClase = async (payload, token) => {
+  const { data } = await api.post('/clases', payload, {
+    headers: { Authorization: `Bearer ${token}` },
+  });
+  return data;
+};
+
+export const enrollAlumno = async (claseId, alumno_id, token) => {
+  const { data } = await api.post(
+    `/clases/${claseId}/alumnos`,
+    { alumno_id },
+    { headers: { Authorization: `Bearer ${token}` } },
+  );
+  return data;
+};
+
 
 export default api;

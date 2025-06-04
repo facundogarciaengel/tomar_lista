@@ -48,6 +48,7 @@ export default function Navbar() {
               <NavLink to="/clases"     onClick={() => setOpen(false)}>Clases</NavLink>
               <NavLink to="/asistencia" onClick={() => setOpen(false)}>Asistencia</NavLink>
               <NavLink to="/reportes"  onClick={() => setOpen(false)}>Reportes</NavLink>
+              <NavLink to="/admin"     onClick={() => setOpen(false)}>Admin</NavLink>
               <NavLink to="/perfil"     onClick={() => setOpen(false)}>Perfil</NavLink>
               <button className={styles.logout} onClick={logout}>Salir</button>
             </nav>
