@@ -1,38 +1,3 @@
-// import { useEffect, useState } from 'react';
-// import useAuth from '../hooks/useAuth';
-// import { fetchAttendanceByClass, sendAttendance, fetchClases } from '../services/api';
-// import AttendanceForm from '../components/AttendanceForm';
-// import Spinner from '../components/Spinner';
-// export default function Asistencia() {
-//   const { user } = useAuth();
-//   const [clases, setClases] = useState([]);
-//   const [selectedClass, setSelectedClass] = useState('');
-//   const [alumnos, setAlumnos] = useState([]);
-//   const [loading, setLoading] = useState(false);
-
-//   useEffect(()=> { fetchClases(user.token).then(setClases); }, [user]);
-//   const loadAlumnos = async (id) => { setLoading(true); const data = await fetchAttendanceByClass(id, user.token); setAlumnos(data); setLoading(false); };
-//   const togglePresente = (id) => setAlumnos(prev=>prev.map(a=> a.id===id? {...a, presente:!a.presente}:a));
-//   const handleSubmit = async () => { await sendAttendance(selectedClass, alumnos, user.token); alert('Asistencia enviada'); };
-
-//   return (
-//     <section style={{padding:'1rem'}}>
-//       <h2>Asistencia</h2>
-//       <select value={selectedClass} onChange={e=>{ const id=e.target.value; setSelectedClass(id); if(id) loadAlumnos(id); }}>
-//         <option value="">Selecciona una clase</option>
-//         {clases.map(c=> <option key={c.id} value={c.id}>{c.nombre}</option>)}
-//       </select>
-//       {loading && <Spinner />}
-//       {alumnos.length > 0 && (
-//         <>
-//           <AttendanceForm alumnos={alumnos} onToggle={togglePresente} />
-//           <button style={{marginTop:'1rem'}} onClick={handleSubmit}>Enviar asistencia</button>
-//         </>
-//       )}
-//     </section>
-//   );
-// }
-// src/pages/Asistencia.jsx
 import { useState, useEffect } from 'react';
 import useAuth from '../hooks/useAuth';
 import ClassSelect from '../components/ClassSelect';
