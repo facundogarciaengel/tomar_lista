@@ -1,8 +1,8 @@
 {
     "scripts": {
-        "client": "cd client && npm run dev",
+        "ce-english": "cd ce-english && npm run dev",
         "server": "cd server && npm run dev",
-        "dev": "concurrently \"npm run client\" \"npm run server\""
+        "dev": "concurrently \"npm run ce-english\" \"npm run server\""
     },
     "devDependencies": {
         "concurrently": "^9.1.2"
