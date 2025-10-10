@@ -11,6 +11,7 @@ ce-english/dist/
 ce-english/build/
 server/dist/
 server/build/
+.next/
 
 # Ignorar logs y caches
 *.log
